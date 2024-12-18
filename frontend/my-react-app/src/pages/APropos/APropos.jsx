@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Home = () => {
+import './apropos.css';
+
+const APropos = () => {
     return (
         <div>
             
@@ -8,4 +10,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default APropos;

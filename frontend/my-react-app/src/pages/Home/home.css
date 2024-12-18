@@ -1,0 +1,50 @@
+.home {
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.home-conteneur {
+    margin: 0 109px; 
+}
+
+.image-conteneur {
+    padding: 50px 0;
+    position: relative;
+    display: block; 
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.image-conteneur img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.image-conteneur h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 68.45px;
+    color: white;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.home_grid {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    background-color: #F6F6F6;
+    border-radius: 10px;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+
