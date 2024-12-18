@@ -1,0 +1,29 @@
+footer{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.conteneur-footer {
+    background-color: black;
+    text-align: center; 
+    padding: 20px 0; 
+    width: 100%;
+    bottom: 0;
+}
+
+.logo-footer {
+    margin-top:40px;
+    filter: brightness(0) invert(1); 
+    width: 122px; 
+    height:39.44px;
+
+}
+
+p{
+    color: white;
+    Weight: 500;
+    line-height: 34.22px;
+}
+

@@ -1,0 +1,46 @@
+.header-conteneur{
+  padding-left:100px;
+  padding-right: 100px;
+  padding-top:50px;
+  padding-bottom: 0;
+}
+
+
+.enteteConteneur {
+
+  display: flex;
+  align-items: center;
+}
+
+.logo-header {
+  width: 210.32px;
+  height: 68px;
+}
+
+nav {
+  justify-content: flex-end;
+  display: flex;
+  width: 100%;
+  
+}
+
+ul {
+  list-style-type: none; 
+  display: flex;
+  justify-content: end;
+  gap:57px;
+}
+
+a {
+  font-size: 24px;
+  text-decoration: none;
+  color: black;
+  
+}
+
+a:hover {
+  text-decoration: underline; 
+}
+
+
+
