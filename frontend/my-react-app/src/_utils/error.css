@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Utilise 100% de la hauteur de la fenêtre */
+    text-align: center; /* Centre le texte horizontalement */
+}
+
+.titre-erreur{
+    font-size: 288px; 
+}
+
+
+
+p{
+    font-size:36px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+a{
+    font-size:18px;
+}
+
+a:hover {
+    text-decoration: underline; 
+  }
+  
