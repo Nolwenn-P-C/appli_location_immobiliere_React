@@ -1,9 +1,18 @@
+.header-conteneur{
+  padding-left:100px;
+  padding-right: 100px;
+  padding-top:50px;
+  padding-bottom: 0;
+}
+
+
 .enteteConteneur {
+
   display: flex;
   align-items: center;
 }
 
-.logo {
+.logo-header {
   width: 210.32px;
   height: 68px;
 }

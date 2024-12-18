@@ -6,9 +6,9 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>
+        <div className='header-conteneur'>
             <header className="enteteConteneur">
-                <img className="logo" src={LOGO} alt="logo de l'agence Kasa" />
+                <img className="logo-header" src={LOGO} alt="logo de l'agence Kasa" />
                 <nav>
                     <ul>
                         <li><Link to="/home">Accueil</Link></li>
