@@ -1,47 +1,53 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { API } from '@/_services/caller.service';
-import Card from '@/components/Card/Card';
-
 import './home.css';
-import Banner from '../../components/Banner/Banner';
 
 const Home = () => {
     const [properties, setProperties] = useState([]);
-    const flag = useRef(false);
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (flag.current === false) {
-            setIsLoading(true);
-            API.APIPropriétés()
-                .then(res => {
-                    setProperties(res);
-                    setIsLoading(false);
-                })
-                .catch(err => {
-                    console.error("Erreur lors de la récupération des propriétés :", err);
-                    setIsLoading(false);
-                });
-        }
-        return () => flag.current = true;
+        API.APIProprietes()
+            .then(res => {
+                setProperties(res);
+                setIsLoading(false);
+            })
+            .catch(err => {
+                console.error("Erreur lors de la récupération des propriétés :", err);
+                setIsLoading(false);
+            });
     }, []);
 
-    if (isLoading) {
-        return <div>Chargement...</div>;
-    }
-
     return (
-<div className='home'>
-            <div className="home-conteneur">
-                <Banner/>
-                <div className="home_grid with_padding">
-                    {
-                        properties.map((property, id) => (
-                            <Card key={id} property={property} />
-                        ))
-                    }
+        <div className='home'>
+            {isLoading ? (
+                <div>Chargement...</div>
+            ) : (
+                <div className="home-conteneur">
+                    <div className="titre-conteneur-home">
+                        <div className="image-titre-home"></div>
+                        <h1>Chez vous, partout et ailleurs</h1>
+                    </div>
+                    <div className="home-affichage-photos">
+                        {properties.map((property, id) => (
+                            <div key={id} className="conteneur-logements">
+                                <a href={`/fiche-logement/${property.id}`} className="card_lien">
+                                    <article className="card_article">
+                                        {property.pictures && property.pictures[0] && (
+                                            <img
+                                                src={property.pictures[0]}
+                                                alt={property.title}
+                                                className="card_image"
+                                            />
+                                        )}
+                                        <div className="card_titre">{property.title}</div>
+                                    </article>
+                                </a>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };

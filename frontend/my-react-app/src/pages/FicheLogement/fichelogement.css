@@ -1,0 +1,59 @@
+.fiche-détails {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.titre {
+    
+}
+
+.emplacement {
+    color: black;
+}
+
+.étiquettes {
+    display: flex;
+    gap: 5px;
+}
+
+.étiquette {
+    background-color: #FF6060;
+    color:white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.détails-droite {
+    text-align: right;
+}
+
+.hôte {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+   
+}
+
+.photo-hôte {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+.étoile {
+    margin-right: 5px;
+}
+
+.étoile.remplie {
+    color: #FF6060;
+}
+
+.sections-reduites {
+    display: flex;
+    gap: 20px;
+}

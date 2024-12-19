@@ -1,7 +1,6 @@
 import './header.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import LOGO from "/LOGO.png";
-
 import React from 'react';
 
 const Header = () => {
@@ -11,8 +10,8 @@ const Header = () => {
                 <img className="logo-header" src={LOGO} alt="logo de l'agence Kasa" />
                 <nav>
                     <ul>
-                        <li><Link to="/home">Accueil</Link></li>
-                        <li><Link to="/service">A Propos</Link></li>
+                        <li><NavLink to="/home" className={({ isActive }) => isActive ? 'active' : ''}>Accueil</NavLink></li>
+                        <li><NavLink to="/service" className={({ isActive }) => isActive ? 'active' : ''}>A Propos</NavLink></li>
                     </ul>
                 </nav>
             </header>

@@ -1,6 +1,6 @@
 .header-conteneur {
   margin: 0 auto;
-  padding: 50px 109px 0 109px; 
+  padding: 50px 109px 50px 109px;
   max-width: 1200px;
   box-sizing: border-box;
 }
@@ -34,6 +34,6 @@ a {
   color: black;
 }
 
-a:hover {
+.active {
   text-decoration: underline;
 }
