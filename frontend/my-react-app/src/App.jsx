@@ -1,20 +1,17 @@
-import './App.css'
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import PublicRouter from '@/pages/PublicRouter'
+import PublicRouter from '@/pages/PublicRouter';
 
+import './app.css';
 function App() {
-
-
   return (
-    <div className="App">
+    <div className="contenaire-global">
       <BrowserRouter>
         <Routes>
-          <Route path="/*" element={<PublicRouter/>}/>
+          <Route path="/*" element={<PublicRouter />} />
         </Routes>
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

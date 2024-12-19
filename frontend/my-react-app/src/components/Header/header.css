@@ -1,10 +1,9 @@
-.header-conteneur{
-  margin: 0 auto; 
-  padding: 50px 0 0 0; 
-  max-width: 1200px; 
-  box-sizing: border-box; 
+.header-conteneur {
+  margin: 0 auto;
+  padding: 50px 109px 50px 109px;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
-
 
 .enteteConteneur {
   display: flex;
@@ -19,24 +18,22 @@
 
 nav {
   display: flex;
-  width: 100%; 
+  width: 100%;
   justify-content: flex-end;
-  
 }
 
 ul {
-  list-style-type: none; 
+  list-style-type: none;
   display: flex;
-  gap:57px;
+  gap: 57px;
 }
 
 a {
   font-size: 24px;
   text-decoration: none;
   color: black;
-  
 }
 
-a:hover {
-  text-decoration: underline; 
+.active {
+  text-decoration: underline;
 }

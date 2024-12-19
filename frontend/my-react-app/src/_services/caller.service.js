@@ -1,7 +1,7 @@
 const baseURL = 'http://localhost:8080/api';
 
 // Fonction pour récupérer toutes les propriétés
-const APIPropriétés = async () => {
+const APIProprietes = async () => {
   try {
     const response = await fetch(baseURL+`/properties`);
 
@@ -18,7 +18,7 @@ const APIPropriétés = async () => {
 };
 
 // Fonction pour récupérer une propriété spécifique par ID
-const APIPropriétéID = async (id) => {
+const APIProprieteID = async (id) => {
   try {
     const response = await fetch(baseURL+`/properties/${id}`);
 
@@ -35,5 +35,5 @@ const APIPropriétéID = async (id) => {
 };
 
 export const API = {
-    APIPropriétés, APIPropriétéID
+    APIProprietes, APIProprieteID
 }
