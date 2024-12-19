@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { API } from '@/_services/caller.service';
 import Card from '@/components/Card/Card';
-import Image_entete from "/Image-entete.png";
+
 import './home.css';
+import Banner from '../../components/Banner/Banner';
 
 const Home = () => {
     const [properties, setProperties] = useState([]);
@@ -32,10 +33,7 @@ const Home = () => {
     return (
 <div className='home'>
             <div className="home-conteneur">
-                <div className="image-conteneur">
-                    <img src={Image_entete} alt="océan évasion" />
-                    <h1>Chez vous, partout et ailleurs</h1>
-                </div>
+                <Banner/>
                 <div className="home_grid with_padding">
                     {
                         properties.map((property, id) => (
