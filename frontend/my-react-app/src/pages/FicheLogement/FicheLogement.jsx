@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { API } from '@/_services/caller.service';
 
 import Carrousel from '@/components/Carrousel/Carrousel';
@@ -9,6 +9,7 @@ import './fichelogement.css';
 
 const FicheLogement = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [property, setProperty] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -22,15 +23,16 @@ const FicheLogement = () => {
             .catch((err) => {
                 setError("Erreur lors du chargement des données");
                 setIsLoading(false);
+                navigate('/error'); 
             });
-    }, [id]);
+    }, [id, navigate]);
 
     if (isLoading) {
         return <div>Chargement...</div>;
     }
 
     if (error) {
-        return <div>{error}</div>;
+        return null;
     }
 
     if (!property) {
