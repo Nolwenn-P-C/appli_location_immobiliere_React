@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import './carrousel.css';
 
 const Carrousel = ({ images }) => {

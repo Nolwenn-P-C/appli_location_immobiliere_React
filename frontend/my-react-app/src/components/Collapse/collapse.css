@@ -2,10 +2,10 @@
     margin-bottom: 10px;
     border-radius: 10px;
     overflow: hidden;
-    width: 582px;
+    width: 100%;
+    box-sizing: border-box; 
 }
 
-/* Partie supérieure (bouton) */
 .collapse-titre {
     background-color: #ff6060; 
     color: white; 
@@ -32,9 +32,8 @@
     color: white; 
 }
 
-/* Contenu du Collapse */
 .collapse-contenu {
-    background-color: #eaeaea; 
+    background-color:#E3E3E3;; 
     padding: 20px;
     position: relative; 
     z-index: 0; 
@@ -43,15 +42,10 @@
     padding-top: 30px; /* Ajuste le padding pour combler le border-radius */
 }
 
-/* Cibler tous les éléments de texte à l'intérieur du contenu */
 .collapse-contenu * {
-    color: white !important; 
+    color: black !important; 
     font-size: 16px !important; 
     display: block; 
     margin: 0; 
     padding: 0; 
 }
-
-
-
-
