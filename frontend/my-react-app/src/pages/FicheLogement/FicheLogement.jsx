@@ -38,30 +38,40 @@ const FicheLogement = () => {
     }
 
     return (
-        <div className="fiche-logement">
+        <div className="fiche-logement-conteneur">
             <Carrousel images={property.pictures} />
 
-            <div className="fiche-détails">
-                <div className="détails-gauche">
+            <div className="fiche-details">
+                <div className="details-gauche">
                     <h1 className="titre">{property.title}</h1>
-                    <p className="emplacement">{property.location}</p>
-                    <div className="étiquettes">
+                    <div className='emplacement'>
+                        {property.location.split(' - ').reverse().join(' - ')}
+                    </div>
+                    <div className="etiquettes">
                         {property.tags.map((tag, index) => (
-                            <span key={index} className="étiquette">{tag}</span>
+                            <span key={index} className="etiquette">{tag}</span>
                         ))}
                     </div>
                 </div>
 
-                <div className="détails-droite">
-                    <div className="hôte">
-                        <span className="nom-hôte">{property.host.name}</span>
-                        <img src={property.host.picture} alt={property.host.name} className="photo-hôte" />
-                    </div>
-                    <div className="évaluation">
-                        {Array.from({ length: 5 }, (_, i) => (
-                            <span key={i} className={`étoile ${i < property.rating ? 'remplie' : ''}`}>★</span>
+                <div className="details-droite">
+                    <div className="hote">
+                    <div className="nom-hote">
+                        {property.host.name.split(' ').map((part, index) => (
+                            <span key={index}>{part}<br /></span>
                         ))}
                     </div>
+
+                        <img src={property.host.picture} alt={property.host.name} className="photo-hote" />
+                    </div>
+                    <div className="evaluation">
+                        {Array.from({ length: 5 }, (_, i) => (
+                            <span key={i} className={`etoile ${i < property.rating ? 'remplie' : ''}`}>
+                                <i className="fa-solid fa-star"></i>
+                            </span>
+                        ))}
+                    </div>
+
                 </div>
             </div>
 

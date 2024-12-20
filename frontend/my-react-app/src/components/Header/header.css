@@ -1,7 +1,7 @@
 .header-conteneur {
+  max-width: 1240px;
   margin: 0 auto;
-  padding: 50px 109px 50px 109px;
-  max-width: 1200px;
+  padding: 50px 0;
   box-sizing: border-box;
 }
 

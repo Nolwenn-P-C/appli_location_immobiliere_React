@@ -19,11 +19,11 @@ const Home = () => {
     }, []);
 
     return (
-        <div className='home'>
+        <div className='home-conteneur'>
             {isLoading ? (
                 <div>Chargement...</div>
             ) : (
-                <div className="home-conteneur">
+                <div className="home-titre">
                     <div className="titre-conteneur-home">
                         <div className="image-titre-home"></div>
                         <h1>Chez vous, partout et ailleurs</h1>
