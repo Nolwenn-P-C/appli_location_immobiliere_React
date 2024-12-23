@@ -25,8 +25,8 @@ const Home = () => {
             ) : (
                 <div className="home-titre">
                     <div className="titre-conteneur-home">
-                        <div className="image-titre-home"></div>
-                        <h1>Chez vous, partout et ailleurs</h1>
+                        <span className="image-titre-home"></span>
+                        <h1>Chez vous, <span className="titre-ligne">partout et ailleurs</span></h1>
                     </div>
                     <div className="home-affichage-photos">
                         {properties.map((property, id) => (

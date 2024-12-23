@@ -4,11 +4,12 @@
     max-width: 1440px;
     margin: 0 auto;
     overflow: hidden;
-    padding-bottom: 50px;
+    padding-bottom: 5%;
     box-sizing: border-box;
 }
 
 .conteneur-image {
+    margin: 0 auto;
     width: 100%;
     height: 415px;
     display: flex;
@@ -70,4 +71,28 @@
 
 .bouton-carrousel i {
     color: white;
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+    .conteneur-image{
+        width: auto;
+        height: 300px;   
+    }
+
+}
+
+/* Small devices (phones, less than 420px) */
+@media (max-width: 420px) {
+    
+    .conteneur-image{
+        width: 100%;
+        height: 255px;   
+    }
+
+    .indicateur-image{
+        display: none;
+    }
+
 }
