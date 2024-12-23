@@ -1,14 +1,12 @@
 .fiche-logement-conteneur {
-    margin: 0 auto;
+    margin: 4% 10%;
     max-width: 1240px;
     box-sizing: border-box;
   }
 
-
 .fiche-details {
     display: flex;
     justify-content: space-between;
-    
 }
 
 .titre {
@@ -24,19 +22,19 @@
 
 .etiquettes {
     display: flex;
-    gap: 10px; 
-    margin-bottom: 20px; 
+    gap: 4%; 
+    margin-bottom: 6%; 
 }
 
 .etiquette {
-    display:flex;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
     background-color: #FF6060;
-    color:white;
+    color: white;
     border-radius: 10px;
-    padding: 5px 10px;
-    font-size: 14px; 
-    width: 115px;
-    height: 25px;
+    font-size: 14px;
+    width: 33%;
     text-align: center;
     box-sizing: border-box;
 }
@@ -44,7 +42,7 @@
 .hote {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 5%;
     margin-bottom: 20px;
    
 }
@@ -61,9 +59,19 @@
     object-fit: cover;
 }
 
+.evaluation{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
 .etoile {
-    margin-right: 8px;
-    font-size: 20px;
+    display: inline-block; /* Empêche le retour à la ligne */
+    text-align: left;
+    gap: 1%;
+    font-size: 18px;
+    white-space: nowrap; /* Empêche le retour à la ligne */
 }
 
 .etoile i{
@@ -81,4 +89,114 @@
     margin: 0 auto; 
     justify-content: space-between;
     margin-bottom: 50px;
+}
+
+
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+    .titre {
+        font-size:26px;
+    }
+
+    .emplacement {
+        font-size: 18px;
+    }
+
+    .etiquette{
+        font-size: 10px;
+    }
+
+    .etoile {
+        font-size: 16px;
+        
+    }
+
+    .nom-hote{
+        font-size: 15px;
+    }
+
+    .photo-hote {
+        width: 32px;
+        height: 32px;
+    }    
+}  
+    
+
+@media (max-width: 420px) {
+
+    .fiche-logement-conteneur{
+        margin: 0 auto;
+        box-sizing: border-box;
+        max-width: 335px;
+    }
+
+    .fiche-details {
+        display: flex;
+        flex-direction: column; 
+     
+    }
+
+    .details-gauche, .details-droite {
+        width: 100%;
+    }
+
+    .details-gauche{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .titre {
+        font-size: 18px;
+    }
+    
+    .emplacement {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .etiquettes{
+         margin-bottom: 0px;    
+    }
+
+    .etiquette {
+        padding: 0 auto;
+        font-size: 10px; 
+        width: 84px;
+        height: auto;
+    }
+
+    .details-droite{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        padding-top: 4%;
+    }
+
+    .evaluation{
+        display: flex;
+        align-items: center;
+    }
+
+    .etoile {
+        font-size: 14px;
+    }
+
+    .nom-hote{
+        font-size: 12px;
+    }
+
+    .photo-hote {
+        width: 32px;
+        height: 32px;
+    }    
+    
+    .sections-reduites {
+        display: flex;
+        flex-direction: column;
+        max-width: 335px;
+        gap:10px;
+        margin-bottom: 10px;
+    }
 }

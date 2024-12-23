@@ -1,12 +1,11 @@
 .apropos-conteneur {
-    margin: 0 auto;
+    margin: 4% 10%;
     max-width: 1240px;
     box-sizing: border-box;
   }
 
 .image-titre-apropos{
     height: 225px;
-    width: 1240px;
     border-radius: 25px;
     background-image: url('/public/imageEnteteAPropos.png');
     background-size: cover;
@@ -18,7 +17,30 @@
 }
 
 .collapse-conteneur-apropos{
-    padding: 50px 0;
-    width: 1023px;
+    padding: 5% 0;
+    max-width: 1023px;
     margin: 0 auto;
+    
+}
+
+.collapse-conteneur-apropos .collapse {
+   padding-bottom: 5%; 
+}
+
+/* Small devices (phones, less than 768px) */
+@media (max-width: 767.98px) {
+    
+    .image-titre-apropos{
+        height: 160px;
+    }
+
+}
+
+/* Small devices (phones, less than 420px) */
+@media (max-width: 420px) {
+    
+    .image-titre-apropos{
+        height: 111px;
+    }
+
 }

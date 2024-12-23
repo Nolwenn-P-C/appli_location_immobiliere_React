@@ -48,4 +48,20 @@
     display: block; 
     margin: 0; 
     padding: 0; 
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media (max-width: 420px) {
+    .collapse-titre {
+        font-size: 13px;
+        height: 30px;
+    }
+
+    .collapse-contenu * {
+        font-size: 10px !important; 
+    }
+   
 }
