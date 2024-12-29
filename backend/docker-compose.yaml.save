@@ -1,0 +1,4 @@
+# version: '3.8' (ou autre numéro de version)
+
+sudo systemctl restart docker
+

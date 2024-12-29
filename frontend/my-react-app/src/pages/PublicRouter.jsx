@@ -7,20 +7,17 @@ import {Layout, Home, FicheLogement, APropos} from '@/pages'
 
 const PublicRouter = () => {
     return (
-        <div>
-            <Routes>
-                <Route element={<Layout/>}>
-                    <Route index element={<Home/>}/>
-                
-                    <Route path="/home" element={<Home/>}/>
-                    <Route path="/fiche-logement/:id" element={<FicheLogement/>}/>
-                    <Route path="/apropos" element={<APropos/>}/>
-
-                    <Route path="*" element={<Error/>}/>
-                </Route> 
+        <Routes>
+            <Route element={<Layout/>}>
+                <Route index element={<Home/>}/>
             
-            </Routes>
-        </div>
+                <Route path="/home" element={<Home/>}/>
+                <Route path="/fiche-logement/:id" element={<FicheLogement/>}/>
+                <Route path="/apropos" element={<APropos/>}/>
+
+                <Route path="*" element={<Error/>}/>
+            </Route> 
+        </Routes>
     );
 };
 

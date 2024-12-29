@@ -20,7 +20,7 @@ const FicheLogement = () => {
                 setProperty(data);
                 setIsLoading(false);
             })
-            .catch((err) => {
+            .catch(() => {
                 setError("Erreur lors du chargement des données");
                 setIsLoading(false);
                 navigate('/error'); 
@@ -29,10 +29,6 @@ const FicheLogement = () => {
 
     if (isLoading) {
         return <div>Chargement...</div>;
-    }
-
-    if (error) {
-        return null;
     }
 
     if (!property) {

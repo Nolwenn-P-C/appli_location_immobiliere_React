@@ -29,17 +29,27 @@
 
 .collapse-icone {
     font-size: 16px;
-    color: white; 
+    color: white;
+    transition: transform 0.3s ease; 
+}
+
+.collapse.open .collapse-icone {
+    transform: rotate(-180deg); 
 }
 
 .collapse-contenu {
-    background-color:#E3E3E3;; 
-    padding: 20px;
+    background-color: #F6F6F6; 
+    padding: 0 20px;
     position: relative; 
     z-index: 0; 
-    border-radius: 0 0 10px 10px; 
-    margin-top: -10px; /* Ajuste la marge pour combler le border-radius */
-    padding-top: 30px; /* Ajuste le padding pour combler le border-radius */
+    border-radius: 0 0 10px 10px;    
+    overflow: hidden;   
+}
+
+.collapse.open .collapse-contenu {
+    max-height: 500px; 
+    padding-top: 20px; /* Ajoute du padding seulement quand ouvert */
+    padding-bottom: 20px;
 }
 
 .collapse-contenu * {
@@ -63,5 +73,4 @@
     .collapse-contenu * {
         font-size: 10px !important; 
     }
-   
 }
