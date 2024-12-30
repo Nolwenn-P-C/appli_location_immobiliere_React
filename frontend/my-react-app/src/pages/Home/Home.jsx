@@ -3,13 +3,13 @@ import { API } from '@/_services/caller.service';
 import './home.css';
 
 const Home = () => {
-    const [properties, setProperties] = useState([]);
+    const [logements, setLogements] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        API.APIProprietes()
+        API.APILogements()
             .then(res => {
-                setProperties(res);
+                setLogements(res);
                 setIsLoading(false);
             })
             .catch(err => {
@@ -29,18 +29,18 @@ const Home = () => {
                         <h1>Chez vous, <span className="titre-ligne">partout et ailleurs</span></h1>
                     </div>
                     <div className="home-affichage-photos">
-                        {properties.map((property, id) => (
-                            <div key={id} className="conteneur-logements">
-                                <a href={`/fiche-logement/${property.id}`} className="card_lien">
+                        {logements.map((logement) => (
+                            <div key={logement.id} className="conteneur-logements">
+                                <a href={`/fiche-logement/${logement.id}`} className="card_lien">
                                     <article className="card_article">
-                                        {property.pictures && property.pictures[0] && (
+                                        {logement.pictures && logement.pictures[0] && (
                                             <img
-                                                src={property.pictures[0]}
-                                                alt={property.title}
+                                                src={logement.pictures[0]}
+                                                alt={logement.title}
                                                 className="card_image"
                                             />
                                         )}
-                                        <div className="card_titre">{property.title}</div>
+                                        <div className="card_titre">{logement.title}</div>
                                     </article>
                                 </a>
                             </div>

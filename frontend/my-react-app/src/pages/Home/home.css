@@ -4,10 +4,6 @@
     text-align: center;
 }
 
-.home-titre {
-    
-}
-
 .titre-conteneur-home {
     position: relative;
     display: flex;
@@ -151,7 +147,6 @@
         background-position: center;
         border-radius: 10px; 
         z-index: 1;
-        
     }
 
     .titre-conteneur-home h1,
@@ -175,10 +170,6 @@
         gap:5px;
     }
 
-    .card_titre {
-        padding-left: 30px;
-    }
-
     .card_article {
         width: 100%;
     }
@@ -188,7 +179,6 @@
         height: 255px;
         object-fit: cover;
         border-radius: 10px ;
-        
     }
 
     .home-conteneur{

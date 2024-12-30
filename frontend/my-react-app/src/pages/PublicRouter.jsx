@@ -12,7 +12,7 @@ const PublicRouter = () => {
                 <Route index element={<Home/>}/>
             
                 <Route path="/home" element={<Home/>}/>
-                <Route path="/fiche-logement/:id" element={<FicheLogement/>}/>
+                <Route path="/fiche-logement/:idlogement" element={<FicheLogement/>}/>
                 <Route path="/apropos" element={<APropos/>}/>
 
                 <Route path="*" element={<Error/>}/>

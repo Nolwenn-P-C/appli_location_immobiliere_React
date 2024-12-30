@@ -13,14 +13,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
 }
 
 .collapse-conteneur-apropos{
     padding: 5% 0;
     max-width: 1023px;
     margin: 0 auto;
-    
 }
 
 .collapse-conteneur-apropos .collapse {

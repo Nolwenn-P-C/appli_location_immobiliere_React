@@ -1,39 +1,59 @@
 const baseURL = 'http://localhost:8080/api';
 
-// Fonction pour récupérer toutes les propriétés
-const APIProprietes = async () => {
+/**
+ * Fonction pour récupérer tous les logements.
+ * @async
+ * @function APIProprietes
+ * @returns {Promise<Object>} Les données des logements sous forme d'objet JSON.
+ * @throws {Error} Si la requête échoue.
+ */
+const APILogements = async () => {
   try {
-    const response = await fetch(baseURL+`/properties`);
+    const reponse = await fetch(baseURL + `/properties`);
 
-    if (!response.ok) {
-      throw new Error(`Erreur : ${response.status} - ${response.statusText}`);
+    if (!reponse.ok) {
+      throw new Error(`Erreur : ${reponse.status} - ${reponse.statusText}`);
     }
 
-    const data = await response.json();
-    return data;
+    const logement = await reponse.json();
+    return logement;
   } catch (error) {
-    console.error("Erreur lors de la récupération de toutes les propriétés :", error);
-    throw error; 
+    console.error("Erreur lors de la récupération de tous les logements :", error);
+    throw error;
   }
 };
 
-// Fonction pour récupérer une propriété spécifique par ID
-const APIProprieteID = async (id) => {
+/**
+ * Fonction pour récupérer un logement spécifique par ID.
+ * @async
+ * @function APIProprieteID
+ * @param {string|number} id - L'identifiant du logement à récupérer.
+ * @returns {Promise<Object>} Les données du logement sous forme d'objet JSON.
+ * @throws {Error} Si la requête échoue.
+ */
+const APILogementID = async (id) => {
   try {
-    const response = await fetch(baseURL+`/properties/${id}`);
+    const reponse = await fetch(baseURL + `/properties/${id}`);
 
-    if (!response.ok) {
-      throw new Error(`Erreur : ${response.status} - ${response.statusText}`);
+    if (!reponse.ok) {
+      throw new Error(`Erreur : ${reponse.status} - ${reponse.statusText}`);
     }
 
-    const data = await response.json();
-    return data;
+    const logementID = await reponse.json();
+    return logementID;
   } catch (error) {
-    console.error(`Erreur lors de la récupération de la propriété avec l'ID ${id} :`, error);
-    throw error; 
+    console.error(`Erreur lors de la récupération du logement avec l'ID ${id} :`, error);
+    throw error;
   }
 };
 
+/**
+ * Objet contenant les fonctions API.
+ * @type {Object}
+ * @property {Function} APILogements - Fonction pour récupérer toutes les propriétés.
+ * @property {Function} APILogementID - Fonction pour récupérer une propriété spécifique par ID.
+ */
 export const API = {
-    APIProprietes, APIProprieteID
-}
+  APILogements,
+  APILogementID
+};

@@ -9,7 +9,7 @@ const APropos = () => {
             <div className="image-titre-apropos"></div>
             <div className="collapse-conteneur-apropos">
                 {AProposTableau.map((item, index) => (
-                    <Collapse key={index} title={item.titre}>
+                    <Collapse key={index} titre={item.titre}>
                         <p>{item.contenu}</p>
                     </Collapse>
                 ))}
