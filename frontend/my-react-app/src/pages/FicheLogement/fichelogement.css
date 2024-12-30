@@ -35,6 +35,8 @@
     border-radius: 10px;
     font-size: 14px;
     width: 33%;
+    max-width: 115px;
+    min-height: 25px;
     text-align: center;
     box-sizing: border-box;
 }

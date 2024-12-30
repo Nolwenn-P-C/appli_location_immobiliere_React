@@ -61,7 +61,7 @@ a {
 
   .header-conteneur nav ul li a {
     font-size: 12px;
-    
+    text-transform: uppercase
   }
   
 }

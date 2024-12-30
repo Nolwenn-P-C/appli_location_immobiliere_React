@@ -7,10 +7,8 @@ const Error = () => {
     return (
         <div className="container">
             <h1 className='titre-erreur'>404</h1>
-            <p>Oups! La page que vous demandez n'existe pas.</p>
-            <p>
-                <Link to="/">Retourner sur la page d’accueil</Link>
-            </p>
+            <p className='texte-error'>Oups! La page que vous demandez n'existe pas.</p>
+            <p ><Link to="/" className='redirection-error'>Retourner sur la page d’accueil</Link></p>
         </div>
     );
 };

@@ -8,88 +8,92 @@ import Collapse from '@/components/Collapse/Collapse';
 import './fichelogement.css';
 
 const FicheLogement = () => {
-    const { id } = useParams();
+    const { idlogement } = useParams();
     const navigate = useNavigate();
-    const [property, setProperty] = useState(null);
+    const [logement, setLogement] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
-        API.APIProprieteID(id)
+        API.APILogementID(idlogement)
             .then((data) => {
-                setProperty(data);
+                if (!data) {
+                    navigate('/error'); 
+                    return; 
+                }
+                setLogement(data); 
                 setIsLoading(false);
             })
-            .catch((err) => {
-                setError("Erreur lors du chargement des données");
+            .catch(() => {
                 setIsLoading(false);
                 navigate('/error'); 
             });
-    }, [id, navigate]);
-
-    if (isLoading) {
-        return <div>Chargement...</div>;
-    }
-
-    if (error) {
-        return null;
-    }
-
-    if (!property) {
-        return <div>Propriété non trouvée</div>;
-    }
+    }, [idlogement, navigate]);
 
     return (
         <div className="fiche-logement-conteneur">
-            <Carrousel images={property.pictures} />
+            {isLoading ? (
+                <div>Chargement...</div>
+                ) : (
+                logement && (
+                    <>
+                        <Carrousel images={logement.pictures} />
 
-            <div className="fiche-details">
-                <div className="details-gauche">
-                    <h1 className="titre">{property.title}</h1>
-                    <div className='emplacement'>
-                        {property.location.split(' - ').reverse().join(' - ')}
-                    </div>
-                    <div className="etiquettes">
-                        {property.tags.map((tag, index) => (
-                            <span key={index} className="etiquette">{tag}</span>
-                        ))}
-                    </div>
-                </div>
+                        <div className="fiche-details">
+                            <div className="details-gauche">
+                                <h1 className="titre">{logement.title}</h1>
+                                <div className="emplacement">
+                                    {logement.location.split(' - ').reverse().join(' - ')}
+                                </div>
+                                <div className="etiquettes">
+                                    {logement.tags.map((tag, index) => (
+                                        <span key={index} className="etiquette">{tag}</span>
+                                    ))}
+                                </div>
+                            </div>
 
-                <div className="details-droite">
-                    <div className="hote">
-                    <div className="nom-hote">
-                        {property.host.name.split(' ').map((part, index) => (
-                            <span key={index}>{part}<br /></span>
-                        ))}
-                    </div>
+                            <div className="details-droite">
+                                <div className="hote">
+                                    <div className="nom-hote">
+                                        {logement.host.name.split(' ').map((part, index) => (
+                                            <span key={index}>{part}<br /></span>
+                                        ))}
+                                    </div>
 
-                        <img src={property.host.picture} alt={property.host.name} className="photo-hote" />
-                    </div>
-                    <div className="evaluation">
-                        {Array.from({ length: 5 }, (_, i) => (
-                            <span key={i} className={`etoile ${i < property.rating ? 'remplie' : ''}`}>
-                                <i className="fa-solid fa-star"></i>
-                            </span>
-                        ))}
-                    </div>
+                                    <img
+                                        src={logement.host.picture}
+                                        alt={logement.host.name}
+                                        className="photo-hote"
+                                    />
+                                </div>
+                                <div className="evaluation">
+                                    {Array.from({ length: 5 }, (_, i) => (
+                                        <span
+                                            key={i}
+                                            className={`etoile ${i < logement.rating ? 'remplie' : ''}`}
+                                        >
+                                            <i className="fa-solid fa-star"></i>
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
 
-                </div>
-            </div>
+                        <div className="sections-reduites">
+                            <Collapse titre="Description">
+                                <p>{logement.description}</p>
+                            </Collapse>
 
-            <div className="sections-reduites">
-                <Collapse title="Description">
-                    <p>{property.description}</p>
-                </Collapse>
-
-                <Collapse title="Équipements">
-                    <ul>
-                        {property.equipments.map((equipment, index) => (
-                            <li key={index}>{equipment}</li>
-                        ))}
-                    </ul>
-                </Collapse>
-            </div>
+                            <Collapse titre="Équipements">
+                                <ul>
+                                    {logement.equipments.map((equipement, index) => (
+                                        <li key={index}>{equipement}</li>
+                                    ))}
+                                </ul>
+                            </Collapse>
+                        </div>
+                    </>
+                )
+            )}
         </div>
     );
 };
