@@ -69,11 +69,11 @@
 }
 
 .etoile {
-    display: inline-block; /* Empêche le retour à la ligne */
+    display: inline-block; 
     text-align: left;
     gap: 1%;
     font-size: 18px;
-    white-space: nowrap; /* Empêche le retour à la ligne */
+    white-space: nowrap; 
 }
 
 .etoile i{

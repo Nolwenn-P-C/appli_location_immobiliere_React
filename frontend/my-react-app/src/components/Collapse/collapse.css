@@ -48,8 +48,9 @@
 
 .collapse.open .collapse-contenu {
     max-height: 500px; 
-    padding-top: 20px; /* Ajoute du padding seulement quand ouvert */
+    padding-top: 20px; 
     padding-bottom: 20px;
+    margin-top: -10px;
 }
 
 .collapse-contenu * {
