@@ -1,5 +1,5 @@
 import React from 'react';
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, Navigate} from 'react-router-dom'
 
 import Error from '@/_utils/Error';
 
@@ -9,7 +9,7 @@ const PublicRouter = () => {
     return (
         <Routes>
             <Route element={<Layout/>}>
-                <Route index element={<Home/>}/>
+                <Route index element={<Navigate to="/home" replace />}/>
             
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/fiche-logement/:idlogement" element={<FicheLogement/>}/>
