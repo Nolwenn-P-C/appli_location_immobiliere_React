@@ -7,7 +7,7 @@
 .image-titre-apropos{
     height: 225px;
     border-radius: 25px;
-    background-image: url('/public/imageEnteteAPropos.png');
+    background-image: url('/imageEnteteAPropos.png');
     background-size: cover;
     background-position: center;
     display: flex;
